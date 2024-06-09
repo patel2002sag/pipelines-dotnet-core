@@ -6,7 +6,8 @@
 trigger:
 - master
 
-pool:
+pool: 
+  name: my-personal-computer-2
   vmImage: ubuntu-latest
 
 variables:
