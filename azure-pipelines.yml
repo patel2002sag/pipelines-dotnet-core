@@ -8,14 +8,22 @@ trigger:
 
 pool: 
   name: my-personal-computer-2
-  # vmImage: ubuntu-latest
+  vmImage: 'windows-latest'
 
 variables:
+  buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  solution: '**/patel2002sag.pipelines-dotnet-core.sln'
+
+  project: '**/patel2002sag.pipelines-dotnet-core.csproj'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+- task: NuGetToolInstaller@1
+  name: 'NuGetToolInstaller'
+  displayName: 'NuGet tool installer'
+
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
