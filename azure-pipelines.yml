@@ -18,6 +18,8 @@ variables:
   project: '**/patel2002sag.pipelines-dotnet-core.csproj'
 
 steps:
+- script: dotnet restore
+  displayName: 'Restore NuGet Packages'
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 - task: NuGetToolInstaller@1
