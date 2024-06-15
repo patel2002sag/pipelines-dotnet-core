@@ -1,6 +1,16 @@
 trigger:
 - master
 
+parameters:
+- name: image
+  displayName: Pool Image
+  type: string
+  default: ubuntu-latest
+  values:
+  - windows-latest
+  - ubuntu-latest
+  - macOS-latest
+
 pool:
   name: mac-agent
   vmImage: 'windows-latest'
