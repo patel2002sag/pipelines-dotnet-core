@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: my-personal-computer-2
+  name: mac-agent
   vmImage: 'windows-latest'
 
 variables:
